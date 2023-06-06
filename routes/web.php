@@ -17,3 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/hello', 'App\Http\Controllers\ListsController@index');
+Route::get('/hello/add', 'App\Http\Controllers\ListsController@add');
+Route::post('/hello/add', 'App\Http\Controllers\ListsController@create');

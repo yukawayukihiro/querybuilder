@@ -12,4 +12,18 @@ class ListsController extends Controller
         $user_lists = Lists::all();
         return view('index', compact('user_lists')); 
     }
+
+    public function add () {
+        return view('add');
+    }
+
+    public function create (Request $request) {
+        $param = [
+            'name' => $request->name,
+            'age' => $request->age,
+            'mail' => $request->mail,
+        ];
+        DB::table('lists')->insert($param);
+        return redirect('/hello');
+    }
 }
