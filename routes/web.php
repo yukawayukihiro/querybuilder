@@ -19,3 +19,5 @@ Route::get('/', function () {
 Route::get('/hello', 'App\Http\Controllers\ListsController@index');
 Route::get('/hello/add', 'App\Http\Controllers\ListsController@add');
 Route::post('/hello/add', 'App\Http\Controllers\ListsController@create');
+Route::get('/hello/edit/{id}', 'App\Http\Controllers\ListsController@edit');
+Route::post('/hello/update', 'App\Http\Controllers\ListsController@update');

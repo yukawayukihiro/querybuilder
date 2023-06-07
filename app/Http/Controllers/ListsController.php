@@ -26,4 +26,18 @@ class ListsController extends Controller
         DB::table('lists')->insert($param);
         return redirect('/hello');
     }
+
+    public function edit ($id) {
+        $lists = Lists::find($id);
+        return view('edit', compact('lists'));
+    }
+
+    public function update (Request $request) {
+        Lists::find($request->id)->update([
+            'name' => $request->name,
+            'age' => $request->age,
+            'mail' => $request->mail,
+        ]);
+        return redirect('/hello');
+    }
 }

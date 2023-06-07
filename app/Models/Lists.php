@@ -9,4 +9,9 @@ class Lists extends Model
 {
     use HasFactory;
     protected $table = 'lists'; 
+    protected $fillable = [
+        'name',
+        'age',
+        'mail',
+    ];
 }
