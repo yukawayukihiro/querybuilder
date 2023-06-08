@@ -21,3 +21,4 @@ Route::get('/hello/add', 'App\Http\Controllers\ListsController@add');
 Route::post('/hello/add', 'App\Http\Controllers\ListsController@create');
 Route::get('/hello/edit/{id}', 'App\Http\Controllers\ListsController@edit');
 Route::post('/hello/update', 'App\Http\Controllers\ListsController@update');
+Route::post('/hello/del/{id}', 'App\Http\Controllers\ListsController@delete');

@@ -40,4 +40,9 @@ class ListsController extends Controller
         ]);
         return redirect('/hello');
     }
+
+    public function delete ($id) {
+        Lists::where('id', $id)->delete();
+        return redirect('/hello');
+    }
 }
