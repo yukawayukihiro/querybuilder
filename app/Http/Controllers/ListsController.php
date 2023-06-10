@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Lists;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\ListsRequest;
 
 class ListsController extends Controller
 {
@@ -13,11 +14,11 @@ class ListsController extends Controller
         return view('index', compact('user_lists')); 
     }
 
-    public function add () {
+    public function add (Request $request) {
         return view('add');
     }
 
-    public function create (Request $request) {
+    public function create (ListsRequest $request) {
         $param = [
             'name' => $request->name,
             'age' => $request->age,
